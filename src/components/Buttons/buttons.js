@@ -7,10 +7,12 @@ import openFullscreen from '../../utils/fullscreen';
 
 const Buttons = props => {
   const id = props.image && props.image.id
+  console.log("Pranay")
   return (
     <main className="user-buttons relative justify-center flex items-center pa4">
       <icon.Heart
         className="like grow mr5"
+        
         onClick={() => props.like(props.image.id)}
       />
       <h2 className='mh5'>{props.likes[id]}</h2>

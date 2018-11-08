@@ -437,13 +437,6 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
 
-axios@^0.16.2:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.16.2.tgz#ba4f92f17167dfbab40983785454b9ac149c3c6d"
-  dependencies:
-    follow-redirects "^1.2.3"
-    is-buffer "^1.1.5"
-
 axobject-query@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-0.1.0.tgz#62f59dbc59c9f9242759ca349960e7a2fe3c36c0"
@@ -3413,12 +3406,6 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.1.0"
 
-follow-redirects@^1.2.3:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.1.tgz#67a8f14f5a1f67f962c2c46469c79eaec0a90291"
-  dependencies:
-    debug "^3.1.0"
-
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3676,14 +3663,7 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-gif-me-info@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gif-me-info/-/gif-me-info-1.0.1.tgz#1eee3a09610f1aba72576d51f426e26fcbdd41dc"
-  dependencies:
-    axios "^0.16.2"
-    gify-parse "^1.0.6"
-
-gify-parse@^1.0.6, gify-parse@^1.0.7:
+gify-parse@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/gify-parse/-/gify-parse-1.0.7.tgz#d562608c297834f03c5206b5a673c8d62956c163"
   dependencies:
