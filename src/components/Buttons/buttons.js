@@ -7,7 +7,7 @@ import './buttons.css'
 
 const Buttons = props => {
   const id = props.image && props.image.id
-  console.log("Pranay")
+  
   return (
     <main className="user-buttons relative justify-center flex items-center pa4">
       <icon.Heart
