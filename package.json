@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "create-react-app": "^2.1.1",
+    "electron-is-dev": "^1.0.1",
     "gify-parse": "^1.0.7",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
+    "react-dnr": "^0.4.0",
     "react-dom": "^16.6.0",
     "react-feather": "^1.1.4",
     "react-redux": "^5.1.0",
@@ -17,22 +19,27 @@
     "tachyons": "^4.11.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-app": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "concurrently \"SET BROWSER=none&&npm run start-app\" \"wait-on http://localhost:3000 && electron .\""
   },
   "devDependencies": {
     "chance": "^1.0.16",
     "code": "^5.2.3",
+    "concurrently": "^4.0.1",
     "create-react-component-folder": "^0.1.26",
+    "electron": "^3.0.8",
+    "electron-builder": "^20.33.2",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "redux-mock-store": "^1.5.3",
     "semantic-release-cli": "^4.0.5",
-    "sinon": "^7.1.1"
+    "sinon": "^7.1.1",
+    "wait-on": "^3.2.0"
   },
-  "main": "index.js",
+  "main": "public/electron.js",
   "repository": "https://github.com/parshanapally/Reddit-Humor-v2.git",
   "license": "MIT",
   "browserslist": [

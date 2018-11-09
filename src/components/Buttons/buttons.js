@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import sendToSlack from '../../utils/postToSlack'
 import * as icon from 'react-feather'
 import './buttons.css'
-import openFullscreen from '../../utils/fullscreen';
+
 
 const Buttons = props => {
   const id = props.image && props.image.id
@@ -39,10 +39,7 @@ const Buttons = props => {
           )
         }
       />
-        <icon.Maximize 
-          onClick={() => openFullscreen()}
-          className='dim grow link mh5'
-        />
+    
       <div
         onClick={() => props.share(props.image)}
         className="share grow link w2 ml5"
