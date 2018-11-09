@@ -1,6 +1,7 @@
-import { connect } from 'react-redux'
-import Buttons from './buttons'
-import { setCurrentIndex, setNsfw, increaseLikes } from '../../actions/humor'
+import { connect } from "react-redux";
+import Buttons from "./buttons";
+
+import { setCurrentIndex, setNsfw, increaseLikes } from "../../actions/humor";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -8,16 +9,19 @@ const mapDispatchToProps = dispatch => {
     next: id => dispatch(setCurrentIndex(id)),
     nsfw: id => dispatch(setNsfw(id)),
     like: id => dispatch(increaseLikes(id))
-  }
-}
+  };
+};
 
-const mapStateToProps = ({humor}) => {
+const mapStateToProps = ({ humor }) => {
   return {
     current: humor.current,
     image: humor.images[humor.current],
     images: humor.images,
     likes: humor.likes
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Buttons)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Buttons);
