@@ -8,6 +8,7 @@ import thunk from "redux-thunk";
 import "./index.css";
 import "tachyons";
 
+
 const store = createStore(
   rootReducer,
   compose(
@@ -16,9 +17,21 @@ const store = createStore(
   )
 );
 
+const styles = {
+  root: {
+    fontFamily: "sans-serif",
+    textAlign: "center",
+    height: "100%",
+    background: "#222",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  }
+};
 
 ReactDOM.render(
   <Provider store={store}>
+    
     <App />
   </Provider>,
   document.getElementById("root")

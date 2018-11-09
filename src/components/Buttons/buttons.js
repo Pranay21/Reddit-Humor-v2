@@ -8,7 +8,7 @@ const Buttons = props => {
   const id = props.image && props.image.id;
 
   return (
-    <main color="white" className="user-buttons relative justify-center flex items-center pa4">
+    <main  className="user-buttons relative justify-center flex items-center pa4">
       <icon.ThumbsUp
         className="like grow mr5"
         onClick={() => props.like(props.image.id)}

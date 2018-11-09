@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Particles from "../../Particles"
 import Display from '../Display/connectedDisplay';
 
 class App extends Component {
@@ -9,6 +9,7 @@ class App extends Component {
    return (
      <main className="App min-vh-100">
        <Display />
+       <Particles/>
      </main>
    );
  }
