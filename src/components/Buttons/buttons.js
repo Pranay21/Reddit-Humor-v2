@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import PropTypes from 'prop-types'
-import sendToSlack from '../../utils/postToSlack'
-import * as icon from 'react-feather'
-import './buttons.css'
-
-
-const Buttons = props => {
-  const id = props.image && props.image.id
-  
-=======
 import React from "react";
 import PropTypes from "prop-types";
 import sendToSlack from "../../utils/postToSlack";
@@ -19,10 +7,9 @@ import "./buttons.css";
 const Buttons = props => {
   const id = props.image && props.image.id;
 
->>>>>>> 2c4368fa50c671360a4b86407020cfde6327ba8f
   return (
-    <main className="user-buttons relative justify-center flex items-center pa4">
-      <icon.Heart
+    <main color="white" className="user-buttons relative justify-center flex items-center pa4">
+      <icon.ThumbsUp
         className="like grow mr5"
         onClick={() => props.like(props.image.id)}
       />
@@ -36,7 +23,7 @@ const Buttons = props => {
           );
         }}
       />
-      <icon.ChevronsLeft
+      <icon.ArrowLeft
         className="previous dim grow link mh5"
         onClick={() =>
           props.previous(
@@ -44,7 +31,7 @@ const Buttons = props => {
           )
         }
       />
-      <icon.ChevronsRight
+      <icon.ArrowRight
         className="next dim grow link mh5"
         onClick={() =>
           props.next(
@@ -52,16 +39,13 @@ const Buttons = props => {
           )
         }
       />
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 2c4368fa50c671360a4b86407020cfde6327ba8f
       <div
         onClick={() => props.share(props.image)}
         className="share grow link w2 ml5"
       />
     </main>
+    
+    
   );
 };
 
