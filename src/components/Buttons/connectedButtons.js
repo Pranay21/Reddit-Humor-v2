@@ -1,14 +1,15 @@
 import { connect } from "react-redux";
 import Buttons from "./buttons";
 
-import { setCurrentIndex, setNsfw, increaseLikes } from "../../actions/humor";
+import { setCurrentIndex, setNsfw, increaseLikes, decreaseLikes } from "../../actions/humor";
 
 const mapDispatchToProps = dispatch => {
   return {
     previous: id => dispatch(setCurrentIndex(id)),
     next: id => dispatch(setCurrentIndex(id)),
     nsfw: id => dispatch(setNsfw(id)),
-    like: id => dispatch(increaseLikes(id))
+    like: id => dispatch(increaseLikes(id)),
+    dislike: id => dispatch(decreaseLikes(id))
   };
 };
 
@@ -17,7 +18,8 @@ const mapStateToProps = ({ humor }) => {
     current: humor.current,
     image: humor.images[humor.current],
     images: humor.images,
-    likes: humor.likes
+    likes: humor.likes,
+    dislikes: humor.dislikes
   };
 };
 

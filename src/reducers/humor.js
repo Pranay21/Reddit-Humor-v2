@@ -4,6 +4,7 @@ export const initialState = {
 
     images: [],
     likes: {},
+    dislikes:{},
     nsfw: {},
     current: 0,
     gifDuration: {},
@@ -33,6 +34,14 @@ export const increaseLikes = (state, {id}) => {
     return {...state, likes}
 }
 
+export const decreaseLikes = (state, {id}) => {
+
+    const numDisLikes = state.dislikes[id] + 1
+    const dislikes = {...state.likes, [id]: numDisLikes}
+
+    return {...state, dislikes}
+}
+
 export const setNsfw = (state, {id}) => {
     const nsfw = {...state.nsfw}
     nsfw[id] = true
@@ -47,6 +56,7 @@ export const humorReducer = (state = initialState, action) => {
         [types.INIT_STORE]: initStore,
         [types.SET_CURRENT_INDEX]: setCurrentIndex,
         [types.INCREASE_LIKES]: increaseLikes,
+        [types.DECREASE_LIKES]: decreaseLikes,
         [types.SET_NSFW]: setNsfw
 
     }

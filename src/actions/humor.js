@@ -15,4 +15,5 @@ export const getHumor = () => async (dispatch) => {
 export const initStore = (dataLoad) => ({type: types.INIT_STORE, dataLoad})
 export const setCurrentIndex = (i) => ({type: types.SET_CURRENT_INDEX, i})
 export const increaseLikes = (id) => ({type: types.INCREASE_LIKES, id})
+export const decreaseLikes = (id) => ({type: types.DECREASE_LIKES, id})
 export const setNsfw = (id) => ({type: types.SET_NSFW, id})
