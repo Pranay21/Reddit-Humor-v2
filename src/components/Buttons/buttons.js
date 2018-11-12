@@ -13,6 +13,7 @@ const Buttons = props => {
   
   
       <icon.ThumbsUp  size={35}
+     
         className="like grow mr1"
         onClick={() => props.like(props.image.id)}
       />
@@ -24,9 +25,7 @@ const Buttons = props => {
       />
   <h1 className="mh1" >{props.dislikes[id]}</h1>
   
-  
-  
-  
+
       <icon.AlertTriangle  size={35}
         className="nsfw grow link mh5"
         onClick={() => {
