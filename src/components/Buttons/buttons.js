@@ -8,13 +8,9 @@ const Buttons = props => {
   const id = props.image && props.image.id;
 
   return (
-    
-    <div  className="menu">
-  
-  
-      <icon.ThumbsUp  size={35}
-     
-        className="like grow mr1"
+    <main color="white" className="user-buttons relative justify-center flex items-center pa4">
+      <icon.ThumbsUp
+        className="like grow mr5"
         onClick={() => props.like(props.image.id)}
       />
   <h1 className="mh1" >{props.likes[id]}</h1>
@@ -34,9 +30,8 @@ const Buttons = props => {
             props.current === props.images.length - 1 ? 0 : props.current + 1
           );
         }}
-      ></icon.AlertTriangle>
-    
-      <icon.ArrowLeft  size={35}
+      />
+      <icon.ArrowLeft
         className="previous dim grow link mh5"
         onClick={() =>
           props.previous(
@@ -44,7 +39,7 @@ const Buttons = props => {
           )
         }
       />
-      <icon.ArrowRight  size={35}
+      <icon.ArrowRight
         className="next dim grow link mh5"
         onClick={() =>
           props.next(
@@ -56,7 +51,7 @@ const Buttons = props => {
         onClick={() => props.share(props.image)}
         className="share grow link w2 ml5"
       />
-    </div>
+    </main>
     
     
   );
