@@ -10,24 +10,16 @@ const Buttons = props => {
   return (
     
     <div  className="menu">
-  
-      <icon.ThumbsUp  size={35}
-     
-        className="like grow mr1"
-        onClick={() => props.like(props.image.id)}
-      />
-       
- 
-  <h1 className="mh1" >{props.likes[id]}</h1>
 
-   <icon.ThumbsDown  size={35}
-        className="dislike grow mr1"
-        onClick={() => props.dislike(props.image.id)}
+   <icon.ArrowLeft  size={35}
+        className="previous dim grow link mh2"
+        onClick={() =>
+          props.previous(
+            props.current === 0 ? props.images.length - 1 : props.current - 1
+          )
+        }
       />
-  <h1 className="mh1" >{props.dislikes[id]}</h1>
-  
-
-      <icon.AlertTriangle  size={35}
+  <icon.AlertTriangle  size={35}
         className="nsfw grow link mh5"
         onClick={() => {
           props.nsfw(props.image.id);
@@ -35,27 +27,40 @@ const Buttons = props => {
             props.current === props.images.length - 1 ? 0 : props.current + 1
           );
         }}
-      ></icon.AlertTriangle>
-    
-      <icon.ArrowLeft  size={35}
-        className="previous dim grow link mh5"
-        onClick={() =>
-          props.previous(
-            props.current === 0 ? props.images.length - 1 : props.current - 1
-          )
-        }
       />
-      <icon.ArrowRight  size={35}
-        className="next dim grow link mh5"
+
+      <icon.ThumbsUp  size={35}
+     
+        className="like grow link mh1"
+        onClick={() => props.like(props.image.id)}
+      />
+       
+ 
+  <h1 className="mh0" >{props.likes[id]}</h1>
+
+   <icon.ThumbsDown  size={35}
+        className="dislike grow mh1"
+        onClick={() => props.dislike(props.image.id)}
+      />
+  <h1 className="mh1" >{props.dislikes[id]}</h1>
+  
+
+    
+    
+     
+     
+      <div
+        onClick={() => props.share(props.image)}
+        className="share grow link w2 ml5"
+      />
+
+       <icon.ArrowRight  size={35}
+        className="next dim grow link ml5"
         onClick={() =>
           props.next(
             props.current === props.images.length - 1 ? 0 : props.current + 1
           )
         }
-      />
-      <div
-        onClick={() => props.share(props.image)}
-        className="share grow link w2 ml5"
       />
     </div>
     
