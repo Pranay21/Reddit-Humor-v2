@@ -14,13 +14,14 @@ export const initialState = {
 export const initStore = (state = initialState, {dataLoad}) => {
 
     const likes = {...dataLoad.likes, ...state.likes}
+    const dislikes = {...dataLoad.dislikes, ...state.dislikes}
     const nsfw = {...dataLoad.nsfw, ...state.nsfw}
 
     const images = [...dataLoad.images].filter((image) => !nsfw[image.id])
 
     const gifDuration = dataLoad.gifDuration
 
-    return {...state, images, likes, nsfw, gifDuration}
+    return {...state, images, likes,dislikes, nsfw, gifDuration}
 
 }
 
@@ -37,7 +38,7 @@ export const increaseLikes = (state, {id}) => {
 export const decreaseLikes = (state, {id}) => {
 
     const numDisLikes = state.dislikes[id] + 1
-    const dislikes = {...state.likes, [id]: numDisLikes}
+    const dislikes = {...state.dislikes, [id]: numDisLikes}
 
     return {...state, dislikes}
 }

@@ -25,6 +25,7 @@ export const getPostImageInfo = (post) => ({id: getId(post), url: getUrl(post), 
 export const extractForStore = (posts) => {
     const images = []
     const likes = {}
+    const dislikes={}
     const nsfw = {}
     const gifDuration = {}
 
@@ -35,11 +36,12 @@ export const extractForStore = (posts) => {
 
         const {id} = imageData
         likes[id] = 0
+        dislikes[id]=0
         nsfw[id] = false
         gifDuration[id] = 0
 
     })
 
-    return {images, likes, nsfw, gifDuration}
+    return {images, likes, dislikes, nsfw, gifDuration}
 
 }
