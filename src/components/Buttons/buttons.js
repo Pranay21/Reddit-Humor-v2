@@ -3,23 +3,28 @@ import PropTypes from "prop-types";
 import sendToSlack from "../../utils/postToSlack";
 import * as icon from "react-feather";
 import "./buttons.css";
+import { isNode } from "postcss-selector-parser";
 
 const Buttons = props => {
   const id = props.image && props.image.id;
 
   return (
-    
-    <div  className="menu">
-
-   <icon.ArrowLeft  size={35}
-        className="previous dim grow link mh2"
-        onClick={() =>
-          props.previous(
-            props.current === 0 ? props.images.length - 1 : props.current - 1
-          )
-        }
+    <div className="menu">
+      {" "}
+      <icon.ThumbsUp
+        size={35}
+        className="like grow na0 "
+        onClick={() => props.like(props.image.id)}
       />
-  <icon.AlertTriangle  size={35}
+      <h1 className="mh1">{props.likes[id]}</h1>{" "}
+      <icon.ThumbsDown
+        size={35}
+        className="dislike grow ml5"
+        onClick={() => props.dislike(props.image.id)}
+      />
+      <h1 className="mh1">{props.dislikes[id]}</h1>
+      <icon.AlertTriangle
+        size={35}
         className="nsfw grow link mh5"
         onClick={() => {
           props.nsfw(props.image.id);
@@ -28,43 +33,29 @@ const Buttons = props => {
           );
         }}
       />
-
-      <icon.ThumbsUp  size={35}
-     
-        className="like grow link mh1"
-        onClick={() => props.like(props.image.id)}
+      <icon.ArrowLeft
+        size={35}
+        className="previous dim grow link ml3"
+        onClick={() =>
+          props.previous(
+            props.current === 0 ? props.images.length - 1 : props.current - 1
+          )
+        }
       />
-       
- 
-  <h1 className="mh0" >{props.likes[id]}</h1>
-
-   <icon.ThumbsDown  size={35}
-        className="dislike grow mh1"
-        onClick={() => props.dislike(props.image.id)}
-      />
-  <h1 className="mh1" >{props.dislikes[id]}</h1>
-  
-
-    
-    
-     
-     
-      <div
-        onClick={() => props.share(props.image)}
-        className="share grow link w2 ml5"
-      />
-
-       <icon.ArrowRight  size={35}
-        className="next dim grow link ml5"
+      <icon.ArrowRight
+        size={35}
+        className="next dim grow link mh5"
         onClick={() =>
           props.next(
             props.current === props.images.length - 1 ? 0 : props.current + 1
           )
         }
       />
+      <div
+       onClick={() => props.share(props.image)}
+       className="share grow link w2 ml3"
+     />
     </div>
-    
-    
   );
 };
 
@@ -72,7 +63,7 @@ Buttons.defaultProps = {
   next: () => {},
   previous: () => {},
   like: () => {},
-  dislike: ()=>{},
+  dislike: () => {},
   nsfw: () => {},
   share: post => sendToSlack(post.title, post.url, post.id)
 };

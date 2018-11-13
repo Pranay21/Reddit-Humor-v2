@@ -24,7 +24,7 @@
   "scripts": {
     "start-app": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --watchAll",
     "eject": "react-scripts eject",
     "start": "concurrently \"SET BROWSER=none&&npm run start-app\" \"wait-on http://localhost:3000 && electron .\""
   },
